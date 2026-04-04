@@ -49,10 +49,10 @@ export function HomePage() {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="hero-panel"
           >
-            {/* <img
+            <img
               src="https://assets-global.website-files.com/64c9f2789e4862de1ee69764/64d9eb38f9dc556c3999e7c7_ai-chip-artificial-intelligence-future-technology-innovation%201.webp"
               alt="AI technology background"
-            /> */}
+            />
             <div className="stat-grid">
               {heroStats.map((stat) => (
                 <div key={stat.label}>

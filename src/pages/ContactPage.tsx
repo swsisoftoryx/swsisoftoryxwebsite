@@ -20,7 +20,7 @@ export function ContactPage() {
           <h2>Contact Information</h2>
           <div style={{ marginBottom: '1rem' }}>
             <strong>Email</strong>
-            <p><a href="mailto:hello@senome.com">hello@senome.com</a></p>
+            <p><a href="mailto:hello@swsisoftoryx.com">hello@swsisoftoryx.com</a></p>
           </div>
 
           <div style={{ marginBottom: '1rem' }}>

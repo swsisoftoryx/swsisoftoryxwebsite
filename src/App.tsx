@@ -11,6 +11,10 @@ import { CaseStudiesPage } from './pages/CaseStudiesPage'
 import { CareersPage } from './pages/CareersPage'
 import { BlogPage } from './pages/BlogPage'
 import { ContactPage } from './pages/ContactPage'
+import { StockAnalysis } from './pages/finance/StockAnalysis'
+import { AIStockAnalysis } from './pages/finance/AIStockAnalysis'
+import { StockScreener } from './pages/finance/StockScreener'
+import { UsefulFinanceDocs } from './pages/finance/UsefulFinanceDocs'
 
 function App() {
   return (
@@ -28,6 +32,10 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/finance/stock-analysis" element={<StockAnalysis />} />
+          <Route path="/finance/stock-screener" element={<StockScreener />} />
+          <Route path="/finance/important-links" element={<UsefulFinanceDocs />} />
+          <Route path="/finance/ai-analysis" element={<AIStockAnalysis />} />
         </Routes>
       </Suspense>
     </Layout>

@@ -4,7 +4,7 @@ export function AboutPage() {
   return (
     <section className="section inner-page">
       <div className="container">
-        <p className="eyebrow">About Senome</p>
+        <p className="eyebrow">About SWSI Softoryx</p>
         <h1>About Us</h1>
         <p className="lead narrow">
           We are a multidisciplinary team blending strategy, design, and AI engineering.
@@ -20,7 +20,7 @@ export function AboutPage() {
 
           <h2>Our Team</h2>
           <p>
-            Founded in 2022, Senome brings together experts from top tech companies and AI 
+            Founded in 2022, SWSI Softoryx brings together experts from top tech companies and AI 
             research labs. We combine deep technical expertise with genuine entrepreneurial 
             experience to solve complex problems.
           </p>

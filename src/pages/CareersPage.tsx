@@ -37,7 +37,7 @@ export function CareersPage() {
           </div>
 
           <p style={{ marginTop: '2rem' }}>
-            Interested? Send us your resume and portfolio at <strong>careers@senome.com</strong>
+            Interested? Send us your resume and portfolio at <strong>careers@softoryx.com</strong>
           </p>
 
           <Link to="/" className="btn btn-small">

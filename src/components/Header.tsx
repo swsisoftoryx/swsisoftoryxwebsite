@@ -18,6 +18,14 @@ const companyLinks = [
   { label: 'Blog', to: '/blog' },
 ]
 
+// ✅ NEW: Finance links
+const financeLinks = [
+  { label: 'Stock Analysis', to: '/finance/stock-analysis' },
+  { label: 'Stock Screener', to: '/finance/stock-screener' },
+  { label: 'Important Links', to: '/finance/important-links' },
+  { label: 'Stock Analysis using AI', to: '/finance/ai-analysis' },
+]
+
 export function Header() {
   const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useUiStore()
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
@@ -33,6 +41,8 @@ export function Header() {
         </Link>
 
         <nav className={`desktop-nav ${isMobileMenuOpen ? 'open' : ''}`}>
+          
+          {/* Services */}
           <div 
             className={`nav-dropdown ${openDropdown === 'services' ? 'active' : ''}`}
             onMouseEnter={() => setOpenDropdown('services')}
@@ -57,6 +67,7 @@ export function Header() {
             </div>
           </div>
 
+          {/* Company */}
           <div 
             className={`nav-dropdown ${openDropdown === 'company' ? 'active' : ''}`}
             onMouseEnter={() => setOpenDropdown('company')}
@@ -81,23 +92,64 @@ export function Header() {
             </div>
           </div>
 
+          {/* ✅ Finance Dropdown */}
+          <div 
+            className={`nav-dropdown ${openDropdown === 'finance' ? 'active' : ''}`}
+            onMouseEnter={() => setOpenDropdown('finance')}
+            onMouseLeave={() => setOpenDropdown(null)}
+          >
+            <button className="nav-trigger" type="button">
+              Finance <ChevronDown size={16} />
+            </button>
+            <div className="nav-dropdown-menu">
+              {financeLinks.map((item) => (
+                <NavLink 
+                  key={item.to} 
+                  to={item.to} 
+                  onClick={() => {
+                    closeMobileMenu()
+                    closeDropdown()
+                  }}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+          </div>
+
           <NavLink to="/contact" className="btn btn-small" onClick={closeMobileMenu}>
             Contact
           </NavLink>
 
+          {/* Mobile Menu */}
           <div className="mobile-only nav-mobile-groups">
+            
             <h4>Service Options</h4>
             <ul>
               {navSections.services.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
+
             <h4>Company Sections</h4>
             <ul>
               {navSections.company.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
+
+            {/* ✅ Finance in Mobile */}
+            <h4>Finance</h4>
+            <ul>
+              {financeLinks.map((item) => (
+                <li key={item.to}>
+                  <NavLink to={item.to} onClick={closeMobileMenu}>
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+
           </div>
         </nav>
 
